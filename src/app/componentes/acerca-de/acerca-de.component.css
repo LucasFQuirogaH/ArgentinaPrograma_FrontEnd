@@ -1,0 +1,32 @@
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.botonAcerca{
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.buttons{
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.27);
+    background: #017bab;
+    color: rgb(117, 234, 255);
+}
+
+/* -------------------   Formato de la tabla ---------------------*/
+table{
+    background-color: white;
+    text-align: left;
+    width: 90%;
+    padding: 0 0 0 50px;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 5px;
+}
+/* -------------------   Formato de la tabla ---------------------*/

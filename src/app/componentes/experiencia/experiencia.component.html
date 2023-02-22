@@ -1,0 +1,25 @@
+<!-- comienzo de experiencia -->
+<div class="contenedorDeLaSeleccion">
+
+    <div class="flex">
+
+        <div>
+            <h1 class="contenidoSeleccion estiloUnico">Experiencia</h1>
+        </div>
+        <div class="botonExp">
+            <button class="buttons" type="button" routerLink="/nuevaexp" *ngIf="isLogged">Agregar experiencia</button>
+        </div>
+    
+    </div>
+    <!------- contenido  --------->
+    <table class="estiloUnico">
+        <tbody>
+            <tr *ngFor="let Experiencia of expe">
+                <td><h2>{{Experiencia.nombreE}}</h2></td>
+                <td><h3>{{Experiencia.descripcionE}}</h3></td>
+                <td *ngIf="isLogged"><button class="buttons" routerLink="/editexp/{{Experiencia.id}}">EDITAR</button></td>
+                <td *ngIf="isLogged"><button class="buttons" (click)="delete(Experiencia.id)">BORRAR</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

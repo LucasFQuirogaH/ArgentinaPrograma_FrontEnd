@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/argentina-programa-desafio3",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

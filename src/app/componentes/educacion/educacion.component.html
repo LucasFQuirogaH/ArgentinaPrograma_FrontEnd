@@ -1,0 +1,21 @@
+<div class="contenedorDeLaSeleccion">
+    <div class="contenedorDeTituloYLapiz flex">
+        <div>
+            <h1 class="contenidoSeleccion estiloUnico">Educacion</h1>
+        </div>
+        <div class="botonEdu">
+            <button class="buttons" type="button" routerLink="/nuevaedu" *ngIf="isLogged">Agregar educacion</button>
+        </div>
+    </div>
+    <!------- contenido  --------->
+    <table class="estiloUnico">
+        <tbody>
+            <tr *ngFor="let Educacion of educacion">
+                <td><h2>{{Educacion.nombreE}}</h2></td>
+                <td><h3>{{Educacion.descripcionE}}</h3></td>
+                <td *ngIf="isLogged"><button class="buttons" routerLink="/editedu/{{Educacion.id}}">EDITAR</button></td>
+                <td *ngIf="isLogged"><button class="buttons" (click)="delete(Educacion.id)">BORRAR</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

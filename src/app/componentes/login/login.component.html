@@ -1,0 +1,19 @@
+<div class="all">
+    <section>
+        <div class="formulario">
+            <h2>Login</h2><br />
+            <p>Ingrese sus credenciales</p>
+            <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                <!-- separador -->
+                <label for="nombreUsuario">Usuario</label><br />
+                <input class="controls" type="email" id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario"
+                    required />
+                <!-- separador -->
+                <label for="password">Password</label><br />
+                <input class="controls" type="password" id="password" name="password" [(ngModel)]="password" required />
+                <!-- separador -->
+                <button class="buttons" type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,29 @@
+<div *ngIf="proyecto" class="all">
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+        <div>
+            <label for="nombre">Nombre del proyecto</label>
+            <input class="controls" type="text" id="nombre" name="nombre" [(ngModel)]="proyecto.nombre" required />
+        </div>
+        <!-- Separador -->
+        <div>
+            <label for="fotoDescripcion">Foto de descripcion</label>
+            <input class="controls" type="file" id="fotoDescripcion" name="fotoDescripcion" [(ngModel)]="proyecto.fotoDescripcion"
+                (change)="uploadImageThreeEdit($event)" accept=".jpg, .jpeg, .png" required />
+        </div>
+        <!-- Separador -->
+        <div>
+            <label for="link">link</label>
+            <input class="controls" type="text" id="link" name="link" [(ngModel)]="proyecto.link" required />
+        </div>
+        <!-- Separador -->
+        <!--Una acotacion: Aqui arriba aparece un if que significa "Si proyecto" que implica que si el proyecto existe
+                entonces empezas a  llamar a cada atributo y le antepones el proyecto.atributo para que te refieras a ese proyecto
+                -->
+        <!-- ---------------------------------------------------------------------------------------------Imagenes -->
+        <div>
+            <br />
+            <img [src]="imageService.urlThree" width="200px" alt="" />
+        </div>
+        <button class="buttons">editar persona</button>
+    </form>
+</div>

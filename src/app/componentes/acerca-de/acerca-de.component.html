@@ -1,0 +1,22 @@
+<!-- Comienzo de acerca de -->
+<div class="contenedorDeLaSeleccion">
+    <div class="flex">
+        <div>
+            <h1 class="contenidoSeleccion estiloUnico">Acerca De Mi</h1>
+        </div>
+        <div class="botonAcerca">
+            <button class="buttons" type="button" routerLink="/nuevoacerca" *ngIf="isLogged">Agregar datos de mi</button>
+        </div>
+    </div>
+    <!------- contenido  --------->
+    <table class="estiloUnico">
+        <tbody>
+            <tr *ngFor="let Acerca of acerca">
+                <td><h3>{{Acerca.descripcion}}</h3></td>
+                <td *ngIf="isLogged"><button class="buttons" routerLink="/editacerca/{{Acerca.id}}">EDITAR</button></td>
+                <td *ngIf="isLogged"><button class="buttons" (click)="delete(Acerca.id)">BORRAR</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- fin de acerca de  -->

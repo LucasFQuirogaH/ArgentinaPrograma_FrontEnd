@@ -1,0 +1,46 @@
+<div *ngIf="persona" class="all">
+    <div>
+        <div class="flexRapid">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+                <div>
+                    <label for="nombreCompleto">Nombre completo: </label><br />
+                    <input class="controls" type="text" id="nombreCompleto" name="nombreCompleto"
+                        [(ngModel)]="persona.nombreCompleto" required /><br /><br />
+                </div>
+                <div>
+                    <label for="profesion">Profesion: </label><br />
+                    <input class="controls" type="text" id="profesion" name="profesion" [(ngModel)]="persona.profesion" required /><br /><br />
+                </div>
+                <div>
+                    <label for="ubicacion">Ubicacion: </label><br />
+                    <input class="controls" type="text" id="ubicacion" name="ubicacion" [(ngModel)]="persona.ubicacion" required /><br /><br />
+                </div>
+
+                <!-- ---------------------------------------------------------------------------------------------Imagenes -->
+                <div>
+                    <label for="fotoPerfil">Foto de Perfil: </label><br />
+                    <input class="controls" type="file" id="fotoPerfil" name="fotoPerfil"
+                        [(ngModel)]="persona.fotoPerfil" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" required /><br /><br />
+                </div>
+
+                <div>
+                    <label for="fotoPortada">Foto de Portada: </label><br />
+                    <input class="controls" type="file" id="fotoPortada" name="fotoPortada" [(ngModel)]="persona.fotoPortada" (change)="uploadImageTwo($event)" accept=".jpg, .jpeg, .png"
+                        required />
+                </div>
+                <br />
+                <div class="flex">
+                    <div>
+                        <img [src]="imageService.url" width="200px" alt="" />
+                    </div>
+                    <div>
+                        <img [src]="imageService.urlTwo" width="200px" alt="" />
+                    </div>
+                </div>
+                <div>
+                    <button class="buttons">Editar persona</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

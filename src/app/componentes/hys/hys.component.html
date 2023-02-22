@@ -1,0 +1,50 @@
+<!-- comienzo de hard skills & soft skills -->
+<div class="contenedorDeLaSeleccion">
+    <div class="flex">
+
+        <div>
+            <h1 class="contenidoSeleccion estiloUnico">Hard skills & soft skills</h1>
+        </div>
+
+        <div class="botonHys">
+            <button class="buttons" type="button" routerLink="/newskill" *ngIf="isLogged">Nueva skill</button>
+        </div>
+
+
+
+    </div>
+    <!------- contenido  --------->
+    <div class="contenedorHabilidades estiloUnico">
+        <!-- primer peldaño -->
+        <div class="lenguajes">
+            <div class="cajitaHabilidades flex2" *ngFor="let skill of skill">
+                <div class="uno">
+                    <circle-progress
+                    [percent]="(skill.porcentaje)"
+                    [radius]="90"
+                    [title]="(skill.nombre)"
+                    [titleFontSize]="'14'"
+                    [outerStrokeWidth]="15"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [animation]="true"
+                    [animationDuration]="1100"
+                    ></circle-progress>
+                </div>
+                <div class="flex3">
+                    <div>
+                        <td *ngIf="isLogged"><button class="buttons" routerLink="/editskill/{{skill.id}}">EDITAR</button></td>
+                    </div>
+                        
+                    <div>
+                        <td *ngIf="isLogged"><button class="buttons" (click)="delete(skill.id)">BORRAR</button></td>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+</div>
+<!-- fin de hard skills & soft skills -->

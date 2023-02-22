@@ -1,0 +1,27 @@
+<div class="all">
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="formulario">
+        <!-- Separador -->
+        <div>
+            <h2>Nuevo Proyecto</h2>
+            <label for="nombre">Nombre</label>
+            <input class="controls" type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required />
+        </div>
+        <!-- Separador -->
+        <div>
+            <label for="fotoDescripcion">Foto de descripción o portada</label>
+            <input class="controls" type="file" id="fotoDescripcion" name="fotoDescripcion" [(ngModel)]="fotoDescripcion"
+                (change)="uploadImageThree($event)" accept=".jpg, .jpeg, .png" required />
+        </div>
+        <!-- Separador -->
+        <div>
+            <label for="link">Link del sitio</label>
+            <input class="controls" type="text" id="link" name="link" [(ngModel)]="link" required />
+        </div>
+        <!-- Separador -->
+        <div>
+            <br/>
+            <img [src]="imageService.urlThree" width="200px" alt="" />
+        </div>
+        <button class="buttons">Agregar proyecto</button>
+    </form>
+</div>

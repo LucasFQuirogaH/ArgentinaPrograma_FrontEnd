@@ -1,0 +1,31 @@
+<!-- comienzo de proyectos -->
+<div class="contenedorDeLaSeleccion">
+    <div class="flex">
+
+        <div>
+            <h1 class="contenidoSeleccion estiloUnico">Proyectos</h1>
+        </div>
+
+        <div *ngIf="isLogged" class="botonExp">
+            <button class="buttons" type="button" routerLink="/nuevoproyecto">Agregar proyecto</button>
+        </div>
+
+    </div>
+    <!------- contenido  --------->
+    <div class="contenedorDeTrabajos">
+        <!-- cuadrito 1 -->
+        <div class="ordenEnCuadroConGrid flex2" *ngFor="let one of proyectos">
+            <div class="ordenSimple estiloUnico">
+                <div class="padre">
+                    <h1> {{one.nombre}}</h1>
+                    <img src="{{one.fotoDescripcion}}" alt="" class="fotoTrabajo" />
+                    <div class="hijo">
+                        <a href="{{one.link}}" target="_blank">{{one.link}}</a>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isLogged" class="flex3">
+                <button class="buttons" routerLink="/editproyect/{{one.id}}">EDITAR</button>
+                <button class="buttons" (click)="delete(one.id)">BORRAR</button>
+            </div>
+        </div>

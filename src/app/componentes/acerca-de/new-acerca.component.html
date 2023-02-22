@@ -1,0 +1,10 @@
+<div class="all">
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="formulario">
+        <div>
+            <h2>Acerca de</h2>
+            <label for="descripcionE">Descripción</label>
+            <input class="controls" type="text" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required />
+        </div>
+        <button class="buttons">Agregar Acerca de</button>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<!-- comienzo de portada -->
+<div class="portada">
+
+    <div class="contenedorLogin">
+        <button class="login" type="button" (click)= "login()" *ngIf="!isLogged">Login</button>
+        <button class="buttons" type="button" routerLink="/editperson/1" *ngIf="isLogged">Editar Perfil</button>
+        <button class="buttons" type="button" (click)= "onLogOut()" *ngIf="isLogged">Cerrar Sesion</button>
+        <!-- <a href="/login">Login</a> -->
+    </div>
+
+    <div class="contenedorFotoPortada">
+        <img class="fotoPortada" src={{persona.fotoPortada}} alt=""/>
+    </div>
+
+    <div class="contenedorPerfil">
+        <img class="fotoPerfil" src={{persona.fotoPerfil}} alt="">
+    </div>
+
+    <div class="contenedorFacultad">
+        <img class="fotoFacultad" src="/assets/Images/FI_UNSJ.png" alt="">
+    </div>
+
+    <div class="contenedorNombre">
+        <h2 class="estiloNombre estiloUnico">{{persona.nombreCompleto}}</h2>
+    </div>
+
+    <div class="contenedorTitulo">
+        <h3 class="contenidoTitulo estiloUnico">{{persona.profesion}}</h3>
+    </div>
+
+    <div class="contenedorUbicacion">
+        <h4 class="contenidoUbicacion estiloUnico">{{persona.ubicacion}}</h4>
+    </div>
+</div>
+<!-- fin de portada -->
